@@ -1,0 +1,105 @@
+\documentclass[12pt]{article}
+
+% UPDATE THESE PARAMETERS
+
+\newcommand{\sid}{490427491}
+\newcommand{\assignment}{Assignment 2}
+\newcommand{\subj}{COMP2022}
+
+
+\NeedsTeXFormat{LaTeX2e}
+\usepackage[osf]{mathpazo}
+\usepackage[svgnames]{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,mathtools}
+
+%---------------------------
+\usepackage{hyperref,url} 
+%---------------------------
+
+\usepackage[margin=2.7cm,a4paper]{geometry}
+\usepackage{tasks}
+\usepackage{xstring}
+\usepackage[tikz]{mdframed}
+\usepackage{environ}
+\usepackage{etoolbox}
+
+\usepackage{kvoptions}
+\usepackage[]{units}
+\usepackage{url}%
+\usepackage[normal]{subfigure}
+\usepackage{lmodern}
+
+\usepackage[shortlabels]{enumitem}
+% math config
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\set{\{}{\}}
+
+
+% headers
+
+\usepackage{fancyhdr}
+\addtolength{\headheight}{2.5pt}
+\pagestyle{fancy}
+\fancyhead{} 
+\fancyhead[L]{\sc \subj}
+\renewcommand{\headrulewidth}{0.75pt}
+
+% update these headers
+\title{\subj\  - \assignment}
+\author{Joshua Wilkinson - \sid}
+\fancyhead[C]{\sc \sid}
+\fancyhead[R]{\assignment}
+
+% -----------------------------------------
+% pseudo-code typesetting configuration
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}  
+\newcommand{\passthrough}[1]{#1}
+\usepackage{listings}
+
+
+\lstset{
+columns=flexible,
+morecomment=[l]{\#},
+keywords={def,while,do,return,for,if,then,else,True,False,None,nil,len,in},
+float=ht,
+basicstyle=\small\ttfamily,
+numbers=left,
+numberstyle=\color{gray}\ttfamily,
+commentstyle=\color{gray},
+aboveskip=1em,
+belowskip=0.5em,
+breaklines,
+breakatwhitespace=true,
+tabsize=2,
+escapeinside={(*}{*)},
+otherkeywords={self},             % Add keywords here
+keywordstyle={\bf\ttfamily\color[rgb]{0,.3,.7}},
+commentstyle={\color[rgb]{0.133,0.545,0.133}},
+stringstyle={\color[rgb]{0.75,0.49,0.07}},
+showstringspaces=false,            %
+literate={<-}{{$\gets$}}1 {<=}{{$\leq$}}1 {>=}{{$\geq$}}1 {!=}{{$\neq$}}1,
+frame=single,
+framesep=\fboxsep,
+}
+% ---------------------------------------------------
+\begin{document}
+
+\maketitle
+
+\subsection{Q1}
+
+\subsubsection{Part 1}
+
+\subsubsection{Part 2}
+
+\subsection{Q2}
+
+\subsection{Q3} 
+
+
+\end{document}
