@@ -1,0 +1,124 @@
+\documentclass[12pt]{article}
+\usepackage{preamble}
+
+\title{}
+\pagestyle{fancy}
+\linespread{1}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[RE,LO]{\ifthenelse{\value{page}=0}{}{}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+\lstset{
+columns=flexible,
+morecomment=[l]{\#},
+keywords={def,while,do,return,for,if,then,else,True,False,None,nil,len,in},
+float=ht,
+basicstyle=\small\ttfamily,
+numbers=left,
+numberstyle=\color{gray}\ttfamily,
+commentstyle=\color{gray},
+aboveskip=1em,
+belowskip=0.5em,
+breaklines,
+breakatwhitespace=true,
+tabsize=2,
+escapeinside={(*}{*)},
+otherkeywords={self},             % Add keywords here
+keywordstyle={\bf\ttfamily\color[rgb]{0,.3,.7}},
+commentstyle={\color[rgb]{0.133,0.545,0.133}},
+stringstyle={\color[rgb]{0.75,0.49,0.07}},
+showstringspaces=false,            %
+literate={<-}{{$\gets$}}1 {<=}{{$\leq$}}1 {>=}{{$\geq$}}1 {!=}{{$\neq$}}1,
+frame=single,
+framesep=\fboxsep,
+}
+
+\begin{document}
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+%\begin{minipage}{0.5\textwidth}
+%\begin{flushleft}
+%    \center
+%\includegraphics[width=0.9\textwidth]{images/usydNew.png}\\[2cm]
+%\end{flushleft}
+%\end{minipage}
+%\begin{minipage}{0.5\textwidth}
+%\begin{flushright}
+%    \center
+%\includegraphics[width=0.9\textwidth]{images/Logo_WithText_transp.png}\\[2cm]
+%\end{flushright}
+%\end{minipage}
+
+\begin{flushright}
+\includegraphics[width=0.3\textwidth]{images/usydNew.png}\\[2cm]
+\end{flushright}
+
+
+\center 
+
+\vspace{2cm}
+\textsc{\LARGE The University of Sydney}\\[0.75cm]
+\textsc{\Large School of Aerospace, Mechanical and Mechatronic Engineering}\\[1cm]
+
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Quantitative Trajectory Analysis for Underwater Environments}\\[0.4cm] 
+\HRule \\[1.25cm]
+ 
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+Joshua \textsc{Wilkinson}\\
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large\emph{}\\
+\textsc{490427491}\\
+\end{flushright}
+\end{minipage}\\[1.5cm]
+
+
+
+{\large \today}\\[1.5cm]
+
+
+
+\vfill
+
+\end{titlepage}
+\newpage
+\cfoot{}
+\rhead{}
+\thispagestyle{fancy}
+\pagestyle{fancy}
+
+\tableofcontents
+\newpage
+
+\section{Introduction}\label{introduction}
+
+In the field, odometry systems must produce an estimate of the robots position in real time. This imposes strict limitations on the amount of computation that can be performed for each frame, without falling behind the live data. To achieve real time operation, optimisations and approximations must be made by online algorithms. To assess the accuracy of these approximations, ground truth data is collected and compared to the estimated trajectory. Currently, the only widely used technology for this problem is the Doppler Velocity Log (DVL) \cite{wirth2013visual}, which provides precise velocity and altitude information. Unfortunately, this is a large and expensive device that is unsuitable for small underwater vehicles.  Alternatively, offline constructions of a seabed mosaic \cite{wirth2013visual} have been proposed and implemented.
+
+We propose a method utilising offline state-of-the-art SLAM algorithms to produce a ``gold standard estimate'' of the true trajectory using all available sensor information. While not a ground truth (perfect reconstruction of the trajectory), this gold standard shall be a best-possible guess without requiring external sensor information.
+
+\section{Conclusion}
+
+In conclusion, we have demonstrated a proof-of-concept method for SLAM
+algorithms to generate gold standard trajectory data for underwater robotic
+systems. Analysis of trajectories generated using any SLAM or VIO software is
+possible and a wide range of statistics can be generated for analysis. Further
+research will be required to select/develop specific algorithms to achieve
+optimal performance. Once this technique is developed and stabilised, it will provide underwater robotic systems with accurate, repeatable and quantitative benchmarks for odometry systems. With this benchmark, comparison and improvement of these odometry pipelines is much more straightforward and will result in far more accurate underwater online systems. 
+
+\newpage
+\fancyhead{}
+
+\bibliography{bibliography}
+
+\end{document}
