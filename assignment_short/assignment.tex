@@ -6,11 +6,6 @@
 \newcommand{\assignment}{Assignment 2}
 \newcommand{\subj}{COMP2022}
 
-
-\NeedsTeXFormat{LaTeX2e}
-\usepackage[osf]{mathpazo}
-\usepackage[svgnames]{xcolor}
-\usepackage[T1]{fontenc}
 \usepackage{amsmath,amsthm,amsfonts,amssymb,mathtools}
 
 %---------------------------
@@ -29,7 +24,12 @@
 \usepackage{url}%
 \usepackage{subcaption}
 \usepackage{lmodern}
+\usepackage{cleveref}
 \usepackage{todonotes}
+\setuptodonotes{inline}
+
+% \usepackage[backend=bibtex,style=ieee,natbib=true]{biblatex} %added
+% \addbibresource{thesis.bib}
 
 % ignore markdown tighlist pandoc output
 \def\tightlist{}
